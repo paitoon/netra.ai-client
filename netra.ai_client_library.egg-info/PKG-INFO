@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: netra.ai-client-library
+Version: 0.0.1
+Summary: Python Client Library for Netra.AI
+Home-page: https://github.com/paitoon/netra.ai-client
+Author: Paitoon C.
+Author-email: paitoon.chw@gmail.com
+License: UNKNOWN
+Description: # Netra.AI Client Library
+        
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown

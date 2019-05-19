@@ -1,7 +1,6 @@
 import logging
 from requests.exceptions import RequestException
 from .http_method import HttpMethod
-
 log = logging.getLogger(__name__)
     
 class FaceService:
@@ -30,7 +29,7 @@ class FaceService:
             return True, result['data']
         return True, None
 
-    def recognize(self, imageFilePathName, groupName, candidates=0, confidence=0.0):
+    def recognize(self, imageFilePathName, groupName, candidates=0, confidence=0.0, faceLocations=None):
         uri = self.rootUri + "/recognize"
 
         parameters = { 'groupName': groupName }
@@ -38,6 +37,8 @@ class FaceService:
             parameters['candidates'] = str(candidates)
         if confidence > 0.0:
             parameters['confidence'] = str(confidence)
+        if faceLocations is not None:
+            parameters['faceLocations'] = faceLocations
 
         files = { 'image': open(imageFilePathName, 'rb') }
 
