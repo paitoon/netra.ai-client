@@ -1,0 +1,14 @@
+README.md
+setup.py
+netra/__init__.py
+netra/authorize_service.py
+netra/face_group_service.py
+netra/face_service.py
+netra/http_method.py
+netra/kafka_service.py
+netra/netra_client.py
+netra/object_detection_service.py
+netra_client_python.egg-info/PKG-INFO
+netra_client_python.egg-info/SOURCES.txt
+netra_client_python.egg-info/dependency_links.txt
+netra_client_python.egg-info/top_level.txt

@@ -9,3 +9,6 @@ def netra_key():
 
 def netra_pem():
     return resource_filename(__name__, "ssl/keypair.pem")
+
+def shape_predictor_68_model():
+    return resource_filename(__name__, "models/shape_predictor_68_face_landmarks.dat")

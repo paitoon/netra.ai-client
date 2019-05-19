@@ -24,6 +24,9 @@ class AuthorizeService:
         return True, None
 
     def login(self, user, password):
+        if not self.netraClient.isConnect():
+            raise RequestException('Not connect.')
+
         uri = self.rootUri + "/login"
 
         parameters = { 'user': user, 'password': password }
@@ -38,6 +41,9 @@ class AuthorizeService:
         return True, None
     
     def logout(self):
+        if not self.netraClient.isConnect():
+            return
+            
         uri = self.rootUri + "/logout"
 
         parameters = {}
