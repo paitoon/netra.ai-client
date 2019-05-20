@@ -1,6 +1,7 @@
 import logging
 from requests.exceptions import RequestException
 from .http_method import HttpMethod
+
 log = logging.getLogger(__name__)
     
 class FaceService:

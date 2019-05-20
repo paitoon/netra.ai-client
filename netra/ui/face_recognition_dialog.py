@@ -3,7 +3,7 @@ from PyQt5.QtGui import QImage, QPixmap
 import cv2
 from .ui_face_recognition import Ui_FaceRecognitionDialog
 from .camera_chooser_dialog import CameraChooserDialog
-from netra.recognition_camera import RecognitionCamera
+from netra.face_recognition_camera import FaceRecognitionCamera
 
 class FaceRecognitionDialog(QDialog):
     def __init__(self, parent=None):
@@ -19,7 +19,8 @@ class FaceRecognitionDialog(QDialog):
         self.camera = None
 
     def closeEvent(self, evt):
-        self.camera.close()
+        if self.camera:
+            self.camera.close()
         
     def showImage(self, image):
         size = image.shape
@@ -47,7 +48,7 @@ class FaceRecognitionDialog(QDialog):
     def connectPushButtonClicked(self):
         cameraType, cameraURI = CameraChooserDialog.getCamera(self)
         self.ui.cameraLineEdit.setText(cameraType + ':' + cameraURI)
-        self.camera = RecognitionCamera(cameraType, cameraURI)
+        self.camera = FaceRecognitionCamera(cameraType, cameraURI)
         self.camera.setImageContainer(self.ui.imageLabel)
         self.camera.setRecognizedListContainer(self.ui.recognizedListWidget)
         self.camera.start()

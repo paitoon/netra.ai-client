@@ -20,7 +20,7 @@
      <x>0</x>
      <y>0</y>
      <width>563</width>
-     <height>22</height>
+     <height>20</height>
     </rect>
    </property>
    <property name="nativeMenuBar">
@@ -30,7 +30,14 @@
     <property name="title">
      <string>Image Processing</string>
     </property>
+    <widget class="QMenu" name="menuDetect">
+     <property name="title">
+      <string>Detect</string>
+     </property>
+     <addaction name="actionRestricted_Area"/>
+    </widget>
     <addaction name="actionFace_Recognition"/>
+    <addaction name="menuDetect"/>
    </widget>
    <widget class="QMenu" name="menuParameters">
     <property name="title">
@@ -81,6 +88,11 @@
   <action name="actionFace_Recognition">
    <property name="text">
     <string>Face Recognition</string>
+   </property>
+  </action>
+  <action name="actionRestricted_Area">
+   <property name="text">
+    <string>Restricted Area</string>
    </property>
   </action>
  </widget>

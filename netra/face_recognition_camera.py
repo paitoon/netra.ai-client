@@ -13,7 +13,7 @@ from .client import NetraClient
 
 log = logging.getLogger(__name__)
 
-class RecognitionCamera(threading.Thread):
+class FaceRecognitionCamera(threading.Thread):
     def __init__(self, cameraType='local', uri='0'):
         threading.Thread.__init__(self)
 

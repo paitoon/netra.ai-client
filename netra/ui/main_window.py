@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QStyle, QWid
 from netra.ui.ui_main_window import Ui_MainWindow
 from netra.ui.login_dialog import LoginDialog
 from netra.ui.face_recognition_dialog import FaceRecognitionDialog
+from netra.ui.restricted_area_dialog import RestrictedAreaDialog
 import logging
 from netra.client import NetraClient
 
@@ -15,10 +16,11 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        self.ui.actionLogin.triggered.connect(self.login)
-        self.ui.actionFace_Recognition.triggered.connect(self.openFaceRecognition)
+        self.ui.actionLogin.triggered.connect(self.login)        
         self.ui.actionExit.triggered.connect(self.close)
 
+        self.ui.actionFace_Recognition.triggered.connect(self.openFaceRecognition)
+        self.ui.actionRestricted_Area.triggered.connect(self.detectRestrictedArea)
         self.netraClient = NetraClient.getInstance()
 
     def closeEvent(self, evt):
@@ -35,4 +37,8 @@ class MainWindow(QMainWindow):
 
     def openFaceRecognition(self):
         dialog = FaceRecognitionDialog(self)
+        dialog.show()
+
+    def detectRestrictedArea(self):
+        dialog = RestrictedAreaDialog(self)
         dialog.show()
